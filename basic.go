@@ -67,6 +67,33 @@ func consts() {
 	fmt.Println(filename, c, tt)
 
 }
+
+// 枚举类型
+func enums() {
+	const (
+		cpp    = 0
+		java   = 1
+		python = 2
+	)
+	//iota自增
+	const (
+		a = iota
+		_
+		b1
+		c
+	)
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Println(cpp, java, python)
+	fmt.Println(a, b1, c)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
 func main() {
 	fmt.Println("hello hi")
 	variableZeroValue()
@@ -79,5 +106,6 @@ func main() {
 	euler()
 	triangle()
 	consts()
+	enums()
 
 }
