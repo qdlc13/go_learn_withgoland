@@ -69,8 +69,6 @@ func consts() {
 }
 func main() {
 	fmt.Println("hello hi")
-	fmt.Println("test hi")
-	fmt.Println("test hi")
 	variableZeroValue()
 	variableInitialValue()
 	variableTypeDeduction()
