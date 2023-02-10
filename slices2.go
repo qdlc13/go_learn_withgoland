@@ -49,5 +49,26 @@ func main() {
 	printSlice(s8)
 
 	fmt.Println("Copying slice")
+	//把s2切片复制到s1中 //s2比s1长就取前面的元素
+	copy(s1, s2)
+	fmt.Println(s1) //[5 6 4 5]
+	printSlice(s1)
+
+	fmt.Println("Deleting elements from slice")
+	//删除s1第二个元素
+	s1 = append(s1[:1], s1[2:]...)
+	fmt.Println(s1)
+	printSlice(s1)
+
+	fmt.Println("Popping  from front")
+	front := s2[0]
+	s1 = s1[1:]
+	fmt.Println("Popping  from back")
+	tail := s1[len(s1)-1]
+	s1 = s1[:len(s1)-1]
+
+	fmt.Printf("front=%d,tail=%d\n", front, tail)
+	fmt.Println(s1) //[4]
+	printSlice(s1)  //len(s)=1,cap(s)=5
 
 }
