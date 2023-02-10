@@ -31,6 +31,12 @@ func printFile(filename string) {
 		fmt.Println(scanner.Text())
 	}
 }
+func forever() {
+	for {
+		fmt.Println("3333")
+	}
+
+}
 
 func main() {
 	fmt.Println(
@@ -40,5 +46,6 @@ func main() {
 		convertToBin(0)) //1101
 
 	printFile("abc.txt")
+	forever()
 
 }
