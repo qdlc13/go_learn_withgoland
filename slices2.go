@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func printSlice(s []int) {
 	fmt.Printf("len(s)=%d,cap(s)=%d\n", len(s), cap(s))

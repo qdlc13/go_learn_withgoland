@@ -8,4 +8,4 @@
 7. 数组也是值类型
 8. go一般不使用数组使用切片Slice
 9. Slice内部实现：三个指针ptr len cap。ptr是Slice开头元素，len是Slice长度，cap是从ptr开始一直到数组结束。Slice都可以拓展可以超过len不能超过cap
-10. 
+10. map中处理slice,map,function的内建类型都可以作为key，struct类型不包括上述类型也可以做key
