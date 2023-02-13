@@ -43,14 +43,16 @@ func main() {
 	fmt.Println(lengthOfNonRepeatingSubStr(""))
 	fmt.Println(lengthOfNonRepeatingSubStr("v"))
 	fmt.Println(lengthOfNonRepeatingSubStr("abcdef"))
+	fmt.Println(lengthOfNonRepeatingSubStr("我是初学者"))
+	fmt.Println(lengthOfNonRepeatingSubStr("我eeee是初学者"))
 
 }
 
 func lengthOfNonRepeatingSubStr(s string) int {
 	maxLength := 0
 	start := 0
-	lastOccured := make(map[byte]int)
-	for i, ch := range []byte(s) {
+	lastOccured := make(map[rune]int)
+	for i, ch := range []rune(s) {
 		if lastI, ok := lastOccured[ch]; ok && lastI >= start {
 			start = lastOccured[ch] + 1
 		}
