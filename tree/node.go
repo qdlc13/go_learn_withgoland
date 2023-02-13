@@ -23,6 +23,11 @@ func (node treeNode) setValue(value int) {
 	node.value = value
 }
 func (node *treeNode) setValue2(value int) {
+	if node == nil {
+		fmt.Println("Setting value to nil " +
+			"node. Ignored.")
+		return
+	}
 	node.value = value //等价(*node).value = value
 }
 func main() {
@@ -64,4 +69,13 @@ func main() {
 	fmt.Println()
 	pRoot.setValue2(100)
 	pRoot.print()
+	fmt.Println()
+
+	var testRoot *treeNode
+	testRoot.setValue2(66)
+
+	testRoot = &root
+	testRoot.setValue2(500)
+	testRoot.print() //500
+
 }

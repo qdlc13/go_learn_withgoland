@@ -10,4 +10,5 @@
 9. Slice内部实现：三个指针ptr len cap。ptr是Slice开头元素，len是Slice长度，cap是从ptr开始一直到数组结束。Slice都可以拓展可以超过len不能超过cap
 10. map中处理slice,map,function的内建类型都可以作为key，struct类型不包括上述类型也可以做key
 11. golang不支持继承多态，只有封装。面向接口编程
-12. 
+12. nil指针也可以调用方法
+13. 方法中改变内容必须用指针接收者，结构过大也需要指针接收者。
