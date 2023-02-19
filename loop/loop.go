@@ -3,8 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func convertToBin(n int) string {
@@ -25,17 +27,19 @@ func printFile(filename string) {
 	if err != nil {
 		panic(err)
 	}
-	scanner := bufio.NewScanner(file)
-	//省略其他条件只剩结束条件类似while
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
+	printFileContent(file)
 }
 func forever() {
 	for {
 		fmt.Println("3333")
 	}
-
+}
+func printFileContent(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
+	//省略其他条件只剩结束条件类似while
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
 }
 
 func main() {
@@ -44,8 +48,16 @@ func main() {
 		convertToBin(5), //101
 		convertToBin(13),
 		convertToBin(0)) //1101
+	currentDir, _ := os.Getwd()
+	fmt.Println(currentDir)
+	printFile("E:\\git_master\\go_learn_withgoland\\loop\\abc.txt")
+	//forever()
 
-	printFile("abc.txt")
-	forever()
+	s := `sasd"dsd"
+	dddkkk
+	ooo o
+
+	p`
+	printFileContent(strings.NewReader(s))
 
 }
