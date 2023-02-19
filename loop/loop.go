@@ -34,7 +34,7 @@ func forever() {
 		fmt.Println("3333")
 	}
 }
-func printFileContent(reader io.Reader) {
+func printFileContents(reader io.Reader) {
 	scanner := bufio.NewScanner(reader)
 	//省略其他条件只剩结束条件类似while
 	for scanner.Scan() {
@@ -54,10 +54,10 @@ func main() {
 	//forever()
 
 	s := `sasd"dsd"
-	dddkkk
+	dddkkks
 	ooo o
 
 	p`
-	printFileContent(strings.NewReader(s))
+	printFileContents(strings.NewReader(s))
 
 }
