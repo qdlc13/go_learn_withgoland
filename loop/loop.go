@@ -27,7 +27,7 @@ func printFile(filename string) {
 	if err != nil {
 		panic(err)
 	}
-	printFileContent(file)
+	printFileContents(file)
 }
 func forever() {
 	for {
