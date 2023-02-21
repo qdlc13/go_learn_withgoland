@@ -15,3 +15,11 @@
 14. 位结构定义的方法必须放在同一个包中，可以是不同的文件
 15. 如何扩充系统类型或者别人的类型，1定义别名最简单2使用组合最常用3使用内嵌Embedding节省代码
 16. go mod,很好的管理依赖是目前最好的依赖管理方式。
+17. go test -cover 命令行测试代码覆盖率 go test -bench测试代码性能 go test 测试结果
+18. 使用 go tool pprof cpu.out 工具查看cpu.out文件配合web工具发现代码慢的地方
+19.  go test -bench . -cpuprofile cpu.out 性能测试输出到文件cpu.out
+20. go tool pprof cpu.out  pprof工具查看文件 web命令用浏览器输出svg文件
+21. go test -cover -coverprofile= c.out 测试结果输出到c.out文件
+22. go test / go test -bench .  / go test -cover 命令进行测试/测试性能/代码覆盖率测试
+
+

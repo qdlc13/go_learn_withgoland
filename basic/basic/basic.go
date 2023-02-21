@@ -52,10 +52,12 @@ func euler() {
 }
 func triangle() {
 	a, b := 3, 4
+	fmt.Println(calcTriangle(a, b))
+}
+func calcTriangle(a, b int) int {
 	var c int
-	//必须显式转换
 	c = int(math.Sqrt(float64(a*a + b*b)))
-	fmt.Println(c) //5
+	return c
 }
 
 // 常量定义
