@@ -1,6 +1,8 @@
 package treepackage2
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 中序遍历
 func (node *TreeNode) Traverse() {
@@ -27,5 +29,16 @@ func (node *TreeNode) TraverseFunc(f func(node *TreeNode)) {
 	node.Left.TraverseFunc(f)
 	f(node)
 	node.Right.TraverseFunc(f)
+}
 
+// 使用channel中序遍历
+func (node *TreeNode) TraverseWithChannel() chan *TreeNode {
+	out := make(chan *TreeNode)
+	go func() {
+		node.TraverseFunc(func(node *TreeNode) {
+			out <- node //为啥没锁住？？？
+		})
+		close(out) //关闭的channel仍然可以读取数据
+	}()
+	return out
 }
